@@ -1,0 +1,11 @@
+.DS_Store
+settings.json
+*.pdf
+*.out
+linearProbing.cpp
+search.cpp
+sort.cpp
+stackArr.cpp
+stackArr2.cpp
+temp.cpp
+prefixAvg.cpp
