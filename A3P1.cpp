@@ -10,36 +10,33 @@
 using namespace std;
 
 //displaying the array of size n
-void display(int sol[], int n){
+void display(float a[], int n){
     for(int i =0 ;i <n;i++){
-        cout<<sol[i]<<" ";
+        cout<<a[i]<<" ";
     }
   
 }
 /* we can achieve o(n^2) using two loops
 */
-void nSquareComplexitySolution(int arr[], int n){
-    int sol[n];
-    
-    /*we use outer loop to run n times to find all the prefix sums in array*/
-    for(int i =0 ;i <n;i++){
-        sol[i] = 0;
-
-        /*inner loop to compute the sum from 0 to the ith element in the array*/
-        for(int j = 0 ;j<=i;j++)
-            sol[i] += arr[j];
+void nSquareComplexitySolution(float arr[], int n){
+    float sol[n];
+    for(int i = 0;i< n;i++){
+        float sum =0;
+        for(int j=0;j<=i;j++){
+            sum += arr[j];
+        }
+        sol[i] = sum/(i+1);
     }
     display(sol, n);
-
 }
 
 /*we can achieve this with dynamic programming
 */
-void nComplexitySolution(int arr[], int n){
-
-    for(int i =1 ;i <n;i++)
-        arr[i] += arr[i-1];
-     display(arr, n);
+void nComplexitySolution(float arr[], int n){
+    for(int i = 1;i< n;i++){
+        arr[i] = ((i*arr[i-1]) + arr[i])/(i+1);
+    }
+    display(arr, n);
 }
 
 int main(){
@@ -51,7 +48,7 @@ int main(){
 
     //the size of the array
     cin>>n;
-    int arr[n];
+    float arr[n];
 
     //inputting the array elements
     for(int i =0 ;i <n;i++){
@@ -71,6 +68,6 @@ int main(){
 /*
 7
 2 4 5 7 1 4 9
-2 6 11 18 19 23 32 
-2 6 11 18 19 23 32
+2 3 3.66667 4.5 3.8 3.83333 4.57143 
+2 3 3.66667 4.5 3.8 3.83333 4.57143
 */

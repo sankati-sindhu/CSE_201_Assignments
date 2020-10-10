@@ -65,7 +65,7 @@ int main(){
     for(int i =0 ;i <n;i++){
         cin>>arr[i];
     }
-    //sorting in ascending using selection sort
+    //sorting in descending using selection sort
     selectionSort(arr, n, false);
     display(arr, n);
 
@@ -74,6 +74,5 @@ int main(){
 /*
 7
 2 4 5 7 1 4 9
-2 6 11 18 19 23 32 
-2 6 11 18 19 23 32
+9 7 5 4 4 2 1
 */
