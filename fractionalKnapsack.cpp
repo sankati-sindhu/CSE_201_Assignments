@@ -1,3 +1,8 @@
+/*==============================|-problem statement-|==============================*/
+/*
+    Implement fractional knapsack problem
+*/
+/*===================================|-solution-|===================================*/
 #include<iostream>
 #include<vector>
 #include<algorithm>
@@ -48,3 +53,13 @@ int main(int argc, char const *argv[])
     
     return 0;
 }
+/*==================================|-sample output-|=================================*/
+/*
+50 10
+30 20
+45 15
+70 35
+-1
+the maximum weight of knapsack : 80
+The maximum profit we can get is 45
+*/

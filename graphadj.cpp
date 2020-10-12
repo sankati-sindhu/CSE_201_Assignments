@@ -1,3 +1,8 @@
+/*==============================|-problem statement-|==============================*/
+/*
+   Represent a graph using adjacency list.
+*/
+/*===================================|-solution-|===================================*/
 #include <iostream>
 #include <stdlib.h>
 using namespace std;
@@ -36,7 +41,7 @@ struct LL{
     void display(){
         node *temp = top;
         while(temp != nullptr){
-            cout<<temp->vert<<" ";
+            cout<<temp->vert<<"->";
             temp = temp->nxt;
         }
     }
@@ -46,6 +51,7 @@ struct LL{
 int main(){
 
     int V ;
+    cout<<"Number of vertices in the graph \n";
     cin>>V;
     LL *list[V];//graph //pointer array of linked lists
     int start, end, weight;
@@ -55,7 +61,9 @@ int main(){
         list[i] = new LL();   
     }
     
-    //takes inputs stops when given -1
+    cout<<"enter edges . to quit press -1\n";
+
+ //takes inputs stops when given -1
    while(1){
 
         cin>>start;
@@ -68,8 +76,11 @@ int main(){
 
     }
 
+    cout<<"the graph is: \n";
+
     //displays
     for(int i =0;i<V;i++){
+        cout<<i<<"->";
         list[i]->display(); 
         cout<<"null \n";  
     }
@@ -79,3 +90,19 @@ int main(){
 
 
 }
+
+/*==================================|-sample output-|=================================*/
+/*
+Number of vertices in the graph 
+4
+enter edges . to quit press -1
+1 2 3
+0 2 4
+3 2 1
+-1
+the graph is: 
+0->2->null 
+1->2->null 
+2->3->0->1->null 
+3->2->null 
+*/

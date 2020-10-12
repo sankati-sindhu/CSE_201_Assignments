@@ -2,8 +2,6 @@
 /*
     Implement the following sorting algorithms 
     •	Selection sort
-    •	Insertion sort
-    •	Quick sort
 */
 /*===================================|-solution-|===================================*/
 #include<iostream>
@@ -48,7 +46,7 @@ void selectionSort(int arr[], int n, bool asc = true){
 
 //displaying the array of size n
 void display(int sol[], int n){
-    for(int i =0 ;i <n;i++){
+    for(int i = 0 ;i < n;i++){
         cout<<sol[i]<<" ";
     }
   
@@ -58,13 +56,15 @@ int main(){
     int n;
 
     //the size of the array
+    cout<<"enter size of array \n";
     cin>>n;
     int arr[n];
-
+    cout<<"elements in array are \n";
     //inputting the array elements
-    for(int i =0 ;i <n;i++){
+    for(int i = 0 ;i < n;i++){
         cin>>arr[i];
     }
+    cout<<"The sorrted array in descding order\n";
     //sorting in descending using selection sort
     selectionSort(arr, n, false);
     display(arr, n);
@@ -72,7 +72,10 @@ int main(){
 }
 /*==================================|-sample output-|=================================*/
 /*
-7
-2 4 5 7 1 4 9
-9 7 5 4 4 2 1
+enter size of array 
+4
+elements in array are 
+9 3 4 2 
+The sorrted array in descding order
+9 4 3 2 
 */
